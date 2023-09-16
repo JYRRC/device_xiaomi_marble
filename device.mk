@@ -179,8 +179,8 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Fastcharge
-#PRODUCT_PACKAGES += \
-    #vendor.lineage.fastcharge@1.0-service.xiaomi
+PRODUCT_PACKAGES += \
+    vendor.lineage.fastcharge@1.0-service.xiaomi
 
 # Fingerprint
 PRODUCT_PACKAGES += \
