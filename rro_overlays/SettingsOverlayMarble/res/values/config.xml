@@ -32,6 +32,9 @@
     <string name="config_batteryChargeCycles">/sys/class/power_supply/battery/cycle_count</string>
     <bool name="config_supportBatteryHealth">true</bool>
 
+    <!-- Whether show refresh rate QS tile -->
+    <bool name="config_showRefreshRateQsTile">true</bool>
+
      <!-- Display settings screen, Color mode options. Must be the same length and order as
          config_color_mode_options_values below. Only the values that also appear in
          frameworks/base/core/res/res/values/config.xml's config_availableColorModes are shown. -->
