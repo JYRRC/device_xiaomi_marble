@@ -64,8 +64,19 @@ service qti_esepowermanager_service_1_1 /vendor/bin/hw/vendor.qti.esepowermanage
     override
     disabled
 
+service feas_helper /vendor/bin/feas_helper.sh
+    class core
+    user system
+    group system
+    disabled
+    oneshot
+
 # Do not enable NFC on marblein
 on property:ro.boot.product.hardware.sku=marble
     enable nqnfc_2_0_hal_service
     enable secureelement-hal_1_2
     enable qti_esepowermanager_service_1_1
+
+# Start FEASHelper
+on property:sys.boot_completed=1 && property:ro.feas.enable=true
+    start feas_helper
