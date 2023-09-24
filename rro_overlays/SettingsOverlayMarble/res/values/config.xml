@@ -26,6 +26,9 @@
     <!-- Whether to show a preference item for regulatory information in About phone -->
     <bool name="config_show_regulatory_info">true</bool>
     
+    <!-- Whether show refresh rate QS tile -->
+    <bool name="config_showRefreshRateQsTile">true</bool>
+    
     <!-- Battery Health -->
     <string name="config_batteryCalculatedCapacity">/sys/class/power_supply/battery/charge_full</string>
     <string name="config_batteryDesignCapacity">/sys/class/power_supply/battery/charge_full_design</string>
