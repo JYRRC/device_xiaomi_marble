@@ -82,3 +82,6 @@ ro.product.mod_device=marble_global
 # Radio VoNR Calling
 persist.radio.is_vonr_enabled_0=true
 persist.radio.is_vonr_enabled_1=true
+
+# Maintainer
+ro.horizon.maintainer=RyzenForce & JYR_RC
