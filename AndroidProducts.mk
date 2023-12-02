@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/cherish_marble.mk
+    $(LOCAL_DIR)/lineage_marble.mk
 
 COMMON_LUNCH_CHOICES := \
-    cherish_marble-eng \
-    cherish_marble-userdebug \
-    cherish_marble-user
+    lineage_marble-eng \
+    lineage_marble-userdebug \
+    lineage_marble-user
