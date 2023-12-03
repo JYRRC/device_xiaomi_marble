@@ -117,7 +117,7 @@ PRODUCT_PACKAGES += \
     android.hardware.automotive.vehicle@2.0-manager-lib
 
 # Bcr
-#$(call inherit-product, vendor/bcr/bcr.mk)
+$(call inherit-product, vendor/bcr/bcr.mk)
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -153,9 +153,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
 # Meme Camera
-TARGET_CAMERA_USES_NEWER_HIDL_OVERRIDE_FORMAT := true
-TARGET_INCLUDES_MIUI_CAMERA := true
-$(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
+#TARGET_CAMERA_USES_NEWER_HIDL_OVERRIDE_FORMAT := true
+#TARGET_INCLUDES_MIUI_CAMERA := true
+#$(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -400,7 +400,7 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-aosp
+    $(LOCAL_PATH)/overlay-derp
 
 PRODUCT_PACKAGES += \
     AospWifiResOverlayMarble \
