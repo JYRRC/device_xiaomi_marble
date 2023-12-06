@@ -9,6 +9,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common CherishOS stuff.
+TARGET_DISABLE_EPPE := true
 $(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
 # Inherit from marble device.
