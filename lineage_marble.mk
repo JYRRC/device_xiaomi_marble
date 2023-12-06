@@ -18,6 +18,9 @@ $(call inherit-product, device/xiaomi/marble/device.mk)
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_SUPPORTS_QUICK_TAP := true
 
+# Nuke AudioFX
+TARGET_EXCLUDES_AUDIOFX := true
+
 # Device identifier
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := marble
