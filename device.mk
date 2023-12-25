@@ -23,7 +23,8 @@ $(call inherit-product, vendor/xiaomi/marble/marble-vendor.mk)
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-$(call inherit-product, vendor/bcr/bcr.mk)
+# BCR
+#$(call inherit-product, vendor/bcr/bcr.mk)
 
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -258,7 +259,9 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlays
+    $(LOCAL_PATH)/overlays \
+    $(LOCAL_PATH)/overlay-lineage
+    
 
 
 # GPS
@@ -497,8 +500,8 @@ PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
 # Remove unwanted packages
-PRODUCT_PACKAGES += \
-    RemovePackages
+#PRODUCT_PACKAGES += \
+    #RemovePackages
 
 # RIL
 PRODUCT_PACKAGES += \
