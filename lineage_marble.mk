@@ -17,6 +17,7 @@ $(call inherit-product, device/xiaomi/marble/device.mk)
 # Crdroid stuff.
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_ENABLE_BLUR := true
 
 # Nuke AudioFX
 TARGET_EXCLUDES_AUDIOFX := true
