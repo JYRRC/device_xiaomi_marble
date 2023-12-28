@@ -32,11 +32,5 @@
     <dimen name="physical_power_button_center_screen_location_y">
          @dimen/physical_fingerprint_sensor_center_screen_location_y
     </dimen>
-
-    <!-- the padding on the start of the statusbar -->
-    <dimen name="status_bar_padding_start">4dp</dimen>
-
-    <!-- the padding on the end of the statusbar -->
-    <dimen name="status_bar_padding_end">4dp</dimen>
-
+ 
 </resources>
