@@ -39,7 +39,7 @@ public class AodBrightnessService extends Service {
     private SensorManager mSensorManager;
     private Sensor mAodSensor;
     private AmbientDisplayConfiguration mAmbientConfig;
-    private boolean mIsDozing, mIsDozeHbm, mIsAutoBrightnessEnabled;
+    private boolean mIsDozing, mIsDozeHbm;
     private int mDisplayState = Display.STATE_ON;
 
     private final SensorEventListener mSensorListener = new SensorEventListener() {
@@ -64,9 +64,7 @@ public class AodBrightnessService extends Service {
                     if (mIsDozing) {
                         mIsDozing = false;
                         updateDozeBrightness();
-                        if (mIsAutoBrightnessEnabled) {
-                            mSensorManager.unregisterListener(mSensorListener, mAodSensor);
-                        }
+                        mSensorManager.unregisterListener(mSensorListener, mAodSensor);
                     }
                     break;
                 case Intent.ACTION_SCREEN_OFF:
@@ -78,10 +76,8 @@ public class AodBrightnessService extends Service {
                     if (!mIsDozing) {
                         mIsDozing = true;
                         setInitialDozeHbmState();
-                        if (mIsAutoBrightnessEnabled) {
-                            mSensorManager.registerListener(mSensorListener,
-                                    mAodSensor, SensorManager.SENSOR_DELAY_NORMAL);
-                        }
+                        mSensorManager.registerListener(mSensorListener,
+                                mAodSensor, SensorManager.SENSOR_DELAY_NORMAL);
                     }
                     break;
                 case Intent.ACTION_DISPLAY_STATE_CHANGED:
@@ -132,14 +128,8 @@ public class AodBrightnessService extends Service {
     private void setInitialDozeHbmState() {
         final int brightness = Settings.System.getInt(getContentResolver(),
                 Settings.System.SCREEN_BRIGHTNESS, 0);
-        final int brightnessMode = Settings.System.getInt(getContentResolver(),
-                Settings.System.SCREEN_BRIGHTNESS_MODE,
-                Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
-        mIsAutoBrightnessEnabled =
-                (brightnessMode == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC);
-        mIsDozeHbm = mIsAutoBrightnessEnabled && (brightness > DOZE_HBM_BRIGHTNESS_THRESHOLD);
-        dlog("setInitialDozeHbmState: brightness=" + brightness + " mIsAutoBrightnessEnabled="
-                + mIsAutoBrightnessEnabled + " mIsDozeHbm=" + mIsDozeHbm);
+        mIsDozeHbm = (brightness > DOZE_HBM_BRIGHTNESS_THRESHOLD);
+        dlog("setInitialDozeHbmState: brightness=" + brightness + " mIsDozeHbm=" + mIsDozeHbm);
         updateDozeBrightness();
     }
 
