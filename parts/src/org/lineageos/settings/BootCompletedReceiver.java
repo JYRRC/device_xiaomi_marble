@@ -56,7 +56,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         // DolbyUtils.getInstance(context).onBootCompleted();
 
         // Doze
-        // DozeUtils.checkDozeService(context);
+        DozeUtils.checkDozeService(context);
 
         // Refresh Rate
         RefreshUtils.initialize(context);
