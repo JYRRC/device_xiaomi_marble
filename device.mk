@@ -23,6 +23,9 @@ $(call inherit-product, vendor/xiaomi/marble/marble-vendor.mk)
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+# Basic call recorder
+$(call inherit-product, vendor/bcr/bcr.mk)
+
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -160,6 +163,11 @@ PRODUCT_COPY_FILES += \
 # Capabilityconfigstore
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.capabilityconfigstore@1.0.vendor
+
+# Charger
+PRODUCT_PACKAGES += \
+    libsuspend \
+    charger_res_images
 
 # Display
 PRODUCT_PACKAGES += \
