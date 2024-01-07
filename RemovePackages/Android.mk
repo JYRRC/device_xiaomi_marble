@@ -11,7 +11,6 @@ LOCAL_OVERRIDES_PACKAGES := \
     Drive \
     Maps \
     MatLog \
-    Photos \
     PrebuiltGmail \
     RecorderPrebuilt \
     SafetyHubPrebuilt \
